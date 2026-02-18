@@ -93,7 +93,7 @@ export default function FloatingIcons() {
         data-tooltip="passport always ready"
       >
         <Image
-          src="/images/plane.png"
+          src="/images/plane1.png"
           alt="plane drawing"
           className="icon-img"
           width={42}
