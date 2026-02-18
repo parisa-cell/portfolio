@@ -42,7 +42,7 @@ export default function FloatingIcons() {
     <div className="floating-icons">
       <div
         className="floating-icon icon-1"
-        data-tooltip="me and my bike, everyone else"
+        data-tooltip="let's talk about bikes please"
       >
         <Image
           src="/images/bike.png"
@@ -66,7 +66,7 @@ export default function FloatingIcons() {
       </div>
       <div
         className="floating-icon icon-3"
-        data-tooltip="oat milk latte, always"
+        data-tooltip="me and local coffee shops"
       >
         <Image
           src="/images/coffee.png"
@@ -78,7 +78,7 @@ export default function FloatingIcons() {
       </div>
       <div
         className="floating-icon icon-4"
-        data-tooltip="summit views > everything"
+        data-tooltip="summit views >>>>"
       >
         <Image
           src="/images/hike.png"
