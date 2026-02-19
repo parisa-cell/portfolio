@@ -2,6 +2,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/FloatingIcons";
 import RevealOnScroll from "./components/RevealOnScroll";
+import CaseStudies from "./components/CaseStudies";
 
 export default function Home() {
   return (
@@ -34,6 +35,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Work */}
+      <section id="work" className="work">
+        <h2 className="section-title">selected work</h2>
+        <CaseStudies />
+      </section>
 
       <Footer />
       <RevealOnScroll />

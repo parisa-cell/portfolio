@@ -185,9 +185,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   padding: 0.65rem 3rem;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--white);
   border-bottom: 1px solid var(--green-light);
 }
 
@@ -422,9 +420,27 @@ ul {
 
 /* --- Case Studies Section --- */
 .work {
-  padding: 4rem 3rem 6rem;
-  max-width: 1100px;
+  padding: 0 3rem 6rem;
+  max-width: 1200px;
   margin: 0 auto;
+  border: 2px solid var(--green-light);
+  background: var(--off-white);
+  scroll-margin-top: 3.5rem;
+}
+
+.work .section-title {
+  position: sticky;
+  top: 2.95rem;
+  z-index: 10;
+  background: var(--off-white);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  padding: 1rem 0 0.75rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--green-light);
+  margin-left: -3rem;
+  margin-right: -3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .case-studies {
@@ -539,6 +555,141 @@ ul {
 
 .footer-links a:hover {
   opacity: 0.7;
+}
+
+/* --- Magazine Case Studies Layout --- */
+.magazine {
+  display: flex;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.magazine-sidebar {
+  position: sticky;
+  top: 6.75rem;
+  width: 25%;
+  flex-shrink: 0;
+  align-self: flex-start;
+  height: calc(100vh - 6.75rem);
+  display: flex;
+  align-items: center;
+  padding: 0 2.5rem 0 0;
+  border-right: 1px solid var(--green-light);
+}
+
+.magazine-sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.magazine-sidebar li {
+  list-style: none;
+}
+
+.magazine-sidebar li button {
+  all: unset;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-light);
+  padding: 0.5rem 0;
+  line-height: 1.5;
+  transition: color 0.2s, font-weight 0.2s;
+  display: block;
+}
+
+.magazine-sidebar li button:hover {
+  color: var(--green-dark);
+}
+
+.magazine-sidebar li.active button {
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.sidebar-number {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--green-mid);
+  margin-bottom: 0.1rem;
+}
+
+.magazine-content {
+  width: 75%;
+  padding-left: 3rem;
+}
+
+.magazine-item {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--green-light);
+}
+
+.magazine-item:last-child {
+  border-bottom: none;
+  padding-bottom: 1rem;
+}
+
+.magazine-item-number {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--green-mid);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+.magazine-item-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--green-dark);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.magazine-video {
+  aspect-ratio: 16 / 9;
+  background: var(--cream);
+  border: 2px solid var(--green-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.magazine-video span {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.magazine-link {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.magazine-link a {
+  color: var(--green-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.magazine-link a:hover {
+  color: var(--green-mid);
 }
 
 /* ========================================
@@ -748,16 +899,38 @@ ul {
     padding: 4rem 1.5rem;
   }
 
-  .work {
-    padding: 3rem 1.5rem 5rem;
-  }
-
   .case-card {
     padding: 2rem 1.5rem;
   }
 
   .case-card-arrow {
     display: none;
+  }
+
+  .work {
+    padding: 0 1.5rem 4rem;
+  }
+
+  .work .section-title {
+    padding: 2rem 0 1rem;
+  }
+
+  .magazine {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .magazine-sidebar {
+    display: none;
+  }
+
+  .magazine-content {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .magazine-item {
+    padding: 2rem 0;
   }
 
   .case-hero {
@@ -842,10 +1015,6 @@ ul {
   --text-light: #a3b5bc;
 }
 
-[data-theme="dark"] .nav {
-  background: rgba(26, 31, 34, 0.85);
-}
-
 [data-theme="dark"] .case-card:hover {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
@@ -869,10 +1038,6 @@ ul {
     --cream: #232a2e;
     --text: #e0e8ec;
     --text-light: #a3b5bc;
-  }
-
-  html:not([data-theme="light"]) .nav {
-    background: rgba(26, 31, 34, 0.85);
   }
 
   html:not([data-theme="light"]) .case-card:hover {
