@@ -534,8 +534,8 @@ ul {
   font-family: var(--font-ui);
   text-align: center;
   padding: 3rem 2rem;
-  background: var(--off-white);
-  border-top: 1px solid var(--green-light);
+  background: none;
+  border-top: none;
   color: var(--text-light);
   font-size: 0.9rem;
 }
