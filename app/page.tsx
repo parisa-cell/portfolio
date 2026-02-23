@@ -36,10 +36,12 @@ export default function Home() {
       </section>
 
       {/* Work */}
-      <section id="work" className="work">
-        <h2 className="section-title">selected work</h2>
-        <CaseStudies />
-      </section>
+      <div id="work" className="work-wrapper">
+        <section className="work">
+          <h2 className="section-title">selected work</h2>
+          <CaseStudies />
+        </section>
+      </div>
 
       <Footer />
       <RevealOnScroll />
