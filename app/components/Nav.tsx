@@ -5,12 +5,12 @@ export default function Nav() {
   return (
     <nav className="nav">
       <Link href="/" className="nav-logo">
-        PA
+        <span className="nav-logo-short">PA</span>
+        <span className="nav-logo-full"><strong>P</strong>arisa <strong>A</strong>lirezaee</span>
       </Link>
       <div className="nav-links">
-        <Link href="/#about">About</Link>
         <Link href="/#work">Work</Link>
-        <a href="mailto:hello@parisaalirezaee.com">Contact</a>
+        <Link href="#footer">Contact</Link>
         <ThemeToggle />
       </div>
     </nav>

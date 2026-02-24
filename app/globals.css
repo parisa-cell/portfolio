@@ -196,6 +196,41 @@ ul {
   font-style: normal;
   letter-spacing: -0.02em;
   color: var(--green-dark);
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-logo-full {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  transition: max-width 0.1s ease-out;
+  font-weight: 300;
+}
+
+.nav-logo-full strong {
+  font-weight: 800;
+}
+
+.nav-logo-short {
+  display: inline-block;
+  max-width: 2rem;
+  overflow: hidden;
+  transition: max-width 0.1s ease-out, opacity 0.08s ease-out;
+  opacity: 1;
+}
+
+.nav-logo:hover .nav-logo-full {
+  max-width: 15rem;
+}
+
+.nav-logo:hover .nav-logo-short {
+  max-width: 0;
+  opacity: 0;
 }
 
 .nav-links {
@@ -262,7 +297,7 @@ ul {
 
 .hero-text {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: -0.02em;
@@ -541,30 +576,36 @@ ul {
 
 /* --- Footer --- */
 .footer {
-  font-family: var(--font-ui);
   text-align: center;
-  padding: 3rem 2rem;
-  background: none;
-  border-top: none;
+  padding: 5rem 2rem 3rem;
+  scroll-margin-top: 5rem;
+}
+
+.contact-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-text a {
+  color: var(--green-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-text a:hover {
+  text-decoration: underline;
+}
+
+.footer-credit {
+  font-family: var(--font-ui);
   color: var(--text-light);
   font-size: 0.9rem;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 0.75rem;
-}
-
-.footer-links a {
-  font-weight: 500;
-  color: var(--green-dark);
-  transition: opacity 0.2s;
-}
-
-.footer-links a:hover {
-  opacity: 0.7;
+  margin-top: 3rem;
 }
 
 /* --- Magazine Case Studies Layout --- */

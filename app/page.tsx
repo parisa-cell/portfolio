@@ -14,11 +14,10 @@ export default function Home() {
       <header id="about" className="hero">
         <div className="hero-content">
           <p className="hero-text">
-            Hi, I&apos;m Parisa Alirezaee. I&apos;m a Montreal-based product
-            designer and passionate user advocate. I believe in the power of
-            persistence, iterations and user research to translate complex user
-            and business requirements into simple, effective and enjoyable user
-            experience.
+            Hi, I&apos;m Parisa. I&apos;m a product designer who champions
+            users, translates complexity into beautiful simplicity, and brings
+            ideas to life through persistent iteration and purposeful
+            storytelling.
           </p>
         </div>
         <FloatingIcons />

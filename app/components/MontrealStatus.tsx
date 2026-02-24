@@ -80,7 +80,7 @@ export default function MontrealStatus() {
 
   return (
     <p className="montreal-status">
-      It&apos;s {time} over here, currently {weather || timeOfDay}{weather && ` and ${timeOfDay}`}.
+      It&apos;s {time} over here in Montreal, currently {weather || timeOfDay}{weather && ` and ${timeOfDay}`}.
     </p>
   );
 }
