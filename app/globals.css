@@ -884,13 +884,13 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   background: var(--green-light);
   border: 2px solid var(--green-mid);
   font-family: var(--font-ui);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
