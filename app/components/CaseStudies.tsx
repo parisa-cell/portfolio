@@ -5,12 +5,6 @@ import Link from "next/link";
 
 const caseStudies = [
   {
-    id: "agentic-ai",
-    title: "Learning Agentic AI",
-    slug: "/case-study/agentic-ai",
-    cta: "Grab some 🍿 and watch, or",
-  },
-  {
     id: "content-browser",
     title: "Generic Content Browser for Autodesk M&E Products",
     slug: "/case-study/content-browser",
@@ -18,15 +12,17 @@ const caseStudies = [
   },
   {
     id: "cloud-storage",
-    title: "Introducing Cloud Storage for Autodesk Maya",
+    title: "Cloud Personal Storage for Autodesk Maya and 3dsMax",
     slug: "/case-study/cloud-storage",
     cta: "Prefer reading? Skip the video and",
+    video: "/videos/cloud-storage.mp4",
   },
   {
     id: "asset-versioning",
     title: "Asset Versioning for Unity Asset Manager",
     slug: "/case-study/asset-versioning",
     cta: "Curious how it all came together?",
+    video: "/videos/asset-versioning.mp4",
   },
   {
     id: "3d-annotation",
@@ -88,15 +84,28 @@ export default function CaseStudies() {
 
       {/* Content */}
       <div className="magazine-content">
-        {caseStudies.map(({ id, title, slug, cta }, i) => (
+        {caseStudies.map(({ id, title, slug, cta, video }, i) => (
           <div key={id} id={id} className="magazine-item">
             <h3 className="magazine-item-number">
               {String(i + 1).padStart(2, "0")}
             </h3>
             <h3 className="magazine-item-title">{title}</h3>
-            <div className="magazine-video">
-              <span>Video coming soon</span>
-            </div>
+            {video ? (
+              <div className="magazine-video">
+                <video
+                  src={video}
+                  controls
+                  playsInline
+                  muted
+                  preload="metadata"
+                  style={{ width: "100%", borderRadius: "0.5rem" }}
+                />
+              </div>
+            ) : (
+              <div className="magazine-video">
+                <span>Video coming soon</span>
+              </div>
+            )}
             <p className="magazine-link">
               {cta}{" "}
               <Link href={slug}>read the full story here &rarr;</Link>

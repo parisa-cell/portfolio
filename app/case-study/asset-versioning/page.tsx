@@ -18,7 +18,7 @@ export default function AssetVersioningCaseStudy() {
           <Link href="/#work" className="back-link">
             &larr; Back to work
           </Link>
-          <span className="case-number">04</span>
+          <span className="case-number">03</span>
           <h1>Unity Cloud Asset Versioning</h1>
           <p className="case-subtitle">
             Designing version control workflows for 3D assets in collaborative
@@ -460,7 +460,7 @@ export default function AssetVersioningCaseStudy() {
 
         <div className="case-nav">
           <Link href="/case-study/cloud-storage" className="case-nav-link">
-            &larr; Previous: Cloud Storage
+            &larr; Previous: Cloud Personal Storage
           </Link>
           <Link href="/case-study/3d-annotation" className="case-nav-link">
             Next: 3D Annotation &rarr;

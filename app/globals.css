@@ -941,6 +941,16 @@ ul {
   margin-bottom: 1rem;
 }
 
+.case-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--green-dark);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
 .case-body p {
   font-size: 1.05rem;
   line-height: 1.8;

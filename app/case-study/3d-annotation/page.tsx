@@ -18,7 +18,7 @@ export default function AnnotationCaseStudy() {
           <Link href="/#work" className="back-link">
             &larr; Back to work
           </Link>
-          <span className="case-number">05</span>
+          <span className="case-number">04</span>
           <h1>Unity Reflect Annotation</h1>
           <p className="case-subtitle">
             Allowing users to collaborate on 3D models real-time
@@ -471,8 +471,8 @@ export default function AnnotationCaseStudy() {
           <Link href="/case-study/asset-versioning" className="case-nav-link">
             &larr; Previous: Asset Versioning
           </Link>
-          <Link href="/case-study/agentic-ai" className="case-nav-link">
-            Next: Agentic AI &rarr;
+          <Link href="/#work" className="case-nav-link">
+            All work &rarr;
           </Link>
         </div>
       </article>

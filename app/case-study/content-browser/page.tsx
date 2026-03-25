@@ -17,7 +17,7 @@ export default function ContentBrowserCaseStudy() {
           <Link href="/#work" className="back-link">
             &larr; Back to work
           </Link>
-          <span className="case-number">02</span>
+          <span className="case-number">01</span>
           <h1>Generic Content Browser for Autodesk M&amp;E Products</h1>
           <p className="case-subtitle">
             Designing a unified content browsing experience across Autodesk
@@ -284,11 +284,11 @@ export default function ContentBrowserCaseStudy() {
         </div>
 
         <div className="case-nav">
-          <Link href="/case-study/agentic-ai" className="case-nav-link">
-            &larr; Previous: Agentic AI
+          <Link href="/#work" className="case-nav-link">
+            &larr; All work
           </Link>
           <Link href="/case-study/cloud-storage" className="case-nav-link">
-            Next: Cloud Storage &rarr;
+            Next: Cloud Personal Storage &rarr;
           </Link>
         </div>
       </article>
