@@ -290,6 +290,21 @@ export default function ContentBrowserCaseStudy() {
               </a>{" "}
               for more details
             </p>
+            <a
+              href="/images/case-studies/content-browser/gcb-jira-epic.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="case-image-link"
+            >
+              <img
+                src="/images/case-studies/content-browser/gcb-jira-epic.png"
+                alt="JIRA epic for GCB Design phase 1 showing all user stories and their status"
+                style={{ width: "70%", borderRadius: "8px", display: "block", margin: "0 auto", border: "1px solid #ccc" }}
+              />
+              <p className="case-image-caption">
+                JIRA tickets created for the engineering team backlog
+              </p>
+            </a>
           </section>
 
           <section>
