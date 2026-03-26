@@ -59,8 +59,9 @@ export default function ContentBrowserCaseStudy() {
               At the same time, product teams required a scalable, configurable
               foundation that could support both common requirements and
               domain-specific needs (e.g., USD components, shaderball previews,
-              PBR material maps). The challenge was to design a single, modular,
-              Weave-based Generic Content Browser that could deliver a cohesive
+              PBR material maps). The challenge was to design a single, modular
+              Generic Content Browser built on Weave&mdash;Autodesk&apos;s design
+              system&mdash;that could deliver a cohesive
               experience across products while being flexible enough for each
               team to extend without breaking consistency.
             </p>
@@ -75,41 +76,35 @@ export default function ContentBrowserCaseStudy() {
               Kitbashing, USD, Bifrost, LookdevX, Flow, and Asset Management.
             </p>
             <p>
-              Comparative reviews of the Asset Management UI and the Kitbashing
-              Part Browser highlighted valuable strengths&mdash;like robust
-              metadata visibility or large-dataset handling&mdash;but also
-              exposed major gaps including inconsistent navigation patterns, lack
-              of responsiveness, limited extensibility, and outdated visual
-              design.
+              Comparative reviews of these browsers highlighted valuable
+              strengths like robust metadata visibility or large-dataset
+              handling, but also exposed gaps including inconsistent navigation
+              patterns, lack of responsiveness, limited extensibility, and
+              outdated visual design.
             </p>
             <p>
-              An assessment of the Autodesk Libraries Platform showed promise as
-              a potential foundation due to its mature features, yet its
-              constraints around data source flexibility and alignment with EMS
-              workflows made it an imperfect fit. Together, these evaluations
-              clarified that no existing internal solution could meet the shared
-              and evolving needs of all teams, solidifying the need for a
-              unified, extensible, and Weave-based Generic Content Browser.
+              I also looked at how other organizations within Autodesk had
+              tackled the same problem of fragmented, inconsistent browsers and
+              built a unified browsing experience. The Autodesk Libraries
+              Platform (ALP) was one of them. However, ALP lacked the
+              flexibility around data sources and alignment with the unique needs
+              of M&amp;E workflows and artists, so while we
+              couldn&apos;t adopt it directly, it served as a valuable source of
+              inspiration. Together, these evaluations solidified the need for
+              building a Generic Content Browser for Autodesk M&amp;E products.
             </p>
           </section>
 
           <section>
             <h2>Competitive Audit</h2>
             <p>
-              During the early stages of the project, we examined a wide range
-              of existing browsing experiences across industry tools&mdash;both
-              within Autodesk&apos;s ecosystem and in leading DCC
-              applications&mdash;to understand how they structure navigation,
-              expose metadata, support previews, and handle large asset
-              libraries.
-            </p>
-            <p>
-              By intentionally fragmenting these patterns into their fundamental
-              building blocks (tree views, grid/list switching, filtering models,
-              preview paradigms, drag-and-drop behaviors), we were able to
-              identify which interaction models consistently supported efficient
-              asset discovery and which ones broke down under real production
-              workflows.
+              I also examined existing browsing experiences across industry tools
+              to understand common workflows&mdash;e.g., navigation, metadata
+              preview, handling large asset libraries. After extracting these
+              essential workflows, I fragmented them into their building blocks
+              (tree views, grid/list switching, filtering, preview paradigms,
+              drag-and-drop) to identify which interaction models consistently
+              supported efficient asset discovery.
             </p>
             <p>
               This exploration helped us recognize gaps in current approaches,
@@ -125,8 +120,8 @@ export default function ContentBrowserCaseStudy() {
           <section>
             <h2>User journey and prototype</h2>
             <p>
-              To validate the concept and align the organization around a
-              unified browsing experience, we created an &quot;ideal user
+              Now it was time to sell this idea to the organization. To validate
+              the concept and build alignment, we created an &quot;ideal user
               journey&quot; prototype and took it on a cross-team roadshow.
               Together with my design manager, a PM, and a PO who volunteered to
               champion the initiative, we met with all EMS teams who either
@@ -145,70 +140,61 @@ export default function ContentBrowserCaseStudy() {
               unique technical constraints, and build momentum toward a unified
               solution. Beyond gathering feedback, this &quot;tour&quot; served
               to build alignment in an environment with many PMs, multiple
-              stakeholder groups, and varied priorities&mdash;ultimately helping
-              secure broad support for forming a dedicated engineering team to
-              bring the Generic Content Browser to life.
+              stakeholder groups, and varied priorities. As a result, a
+              dedicated engineering team was formed called Flow Front-end SDK
+              (FFESDK) to bring the Generic Content Browser to life.
             </p>
           </section>
 
           <section>
             <h2>Requirements</h2>
-            <p>User should be able to:</p>
             <ul>
               <li>
-                Locate, browse, and navigate assets through a hierarchical tree
-                view.
+                Data source must be configurable (Flow, Cloud, Local, NAS,
+                custom data storage, etc.)
+              </li>
+              <li>UI and functionality must be configurable/extensible</li>
+              <li>UI must be responsive</li>
+              <li>
+                UI must be able to support many assets (i.e., pagination, lazy
+                loading, etc.)
               </li>
               <li>
-                Switch between gallery (grid) view and list view depending on
-                their workflow.
-              </li>
-              <li>Search for assets using keywords.</li>
-              <li>
-                Filter assets based on metadata such as type, category, or other
-                attributes.
-              </li>
-              <li>Sort assets (e.g., by name, size, type, date).</li>
-              <li>
-                Preview selected assets with larger images, metadata, or
-                detailed inspection (e.g., shaderball).
+                UI must show an empty state when the connection to the data
+                source fails
               </li>
               <li>
-                Change the thumbnail size to fit scanning vs. detail-oriented
-                tasks.
+                User must see and switch between gallery view and list view
+              </li>
+              <li>User must have the option to choose thumbnail size</li>
+              <li>User must be able to search objects</li>
+              <li>
+                User must be able to see the name, size, and file type of the
+                objects
               </li>
               <li>
-                Drag and drop one or multiple assets directly into their scene
-                or workspace.
+                User must see a preview of a selected object that shows a larger
+                image and metadata
+              </li>
+              <li>User must be able to filter objects</li>
+              <li>User must be able to sort objects</li>
+              <li>
+                User must be able to view, browse, and change the source
+                location (directory/project)
               </li>
               <li>
-                Choose how assets are inserted (e.g., import, reference,
-                replace).
-              </li>
-              <li>Set favorites and view favorite assets for quick access.</li>
-              <li>
-                View, browse, and switch source locations (e.g., project,
-                directory, database).
+                User must be able to set and view objects as favorites
               </li>
               <li>
-                Work with large asset libraries via pagination, lazy loading, or
-                &quot;Show more&quot; loading patterns.
+                User must be able to drag and drop one or multiple objects into
+                their scene
               </li>
               <li>
-                Inspect key metadata such as name, size, type, variant,
-                resolution, or maps.
+                User must have options on how objects get dropped into scene
+                (import, reference, replace, etc.)
               </li>
               <li>
-                Preview complex assets such as USD variants, assemblies, or PBR
-                maps.
-              </li>
-              <li>
-                View contextual indicators (e.g., whether an asset is used or
-                selected in the scene).
-              </li>
-              <li>
-                Work offline or without Flow for base functionality (when
-                supported).
+                User must see the thumbnail dimmed when dragging into the scene
               </li>
             </ul>
           </section>
@@ -225,15 +211,38 @@ export default function ContentBrowserCaseStudy() {
               essentials from nice-to-haves and clearly define the MVP.
             </p>
             <p>
-              Once the MVP scope was set, I organized a second prioritization
-              workshop to sequence those MVP items across remaining sprints,
-              effectively acting as both PO and interim scrum master to ensure
-              clarity, alignment, and momentum. Through this process, I helped
-              the team translate a complex, multi-stakeholder vision into an
-              actionable delivery plan, ensuring that we shipped the
-              highest-value workflows first while keeping future extensibility
-              in mind.
+              Once we defined the MVP, I ran another prioritization session
+              with the team to break it down across the remaining sprints. I
+              stepped in as both a PO and an interim scrum master to help keep
+              things clear and moving. We focused on what needed to ship first,
+              what could wait, and how everything fit together over time. This
+              helped us turn a pretty complex, multi-team vision into a concrete
+              plan we could actually execute on&mdash;making sure we delivered
+              the most valuable workflows early, while still leaving room to
+              expand later.
             </p>
+          </section>
+
+          <section>
+            <h2>Requirements for MVP</h2>
+            <ul>
+              <li>As a user I want to see the location at a glance and go up the directory</li>
+              <li>As a user I want to see the objects in selected directory in grid view</li>
+              <li>As a user I want to navigate the directory</li>
+              <li>As a user I want to see GCB in horizontal view</li>
+              <li>As a user I want to see GCB in vertical view</li>
+              <li>As a user I want to change the tile size</li>
+              <li>As a user I want the window to be responsive and adaptive</li>
+              <li>As a user I want to drag and drop an object into the scene</li>
+              <li>As a user I want to navigate folders with large number of folders in them</li>
+              <li>As a user I want a basic authentication setup</li>
+              <li>As a user I want to get proper feedback when a directory is empty</li>
+              <li>As a user I want resizable panels</li>
+              <li>As a user I want the content browser to show me relevant information when I open it for the first time</li>
+              <li>As a user I want to see thumbnails in the asset cards</li>
+
+
+            </ul>
           </section>
 
           <section>
@@ -257,6 +266,29 @@ export default function ContentBrowserCaseStudy() {
               Bifrost, and LookdevX&mdash;to see the Generic Content Browser
               materialize sprint by sprint, provide timely feedback, and build
               confidence in the direction and quality of the work.
+            </p>
+            <div style={{ width: "100%", borderRadius: "8px", overflow: "hidden" }}>
+              <iframe
+                src="/images/case-studies/content-browser/gcb-deliverables.pdf#toolbar=1&navpanes=0&view=FitH"
+                title="GCB high-fidelity design deliverables"
+                style={{
+                  width: "100%",
+                  height: "80vh",
+                  border: "none",
+                  borderRadius: "8px",
+                }}
+              />
+            </div>
+            <p className="case-image-caption">
+              Scroll and zoom within the viewer, or{" "}
+              <a
+                href="/images/case-studies/content-browser/gcb-deliverables.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                open full screen
+              </a>{" "}
+              for more details
             </p>
           </section>
 
