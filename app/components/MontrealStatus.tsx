@@ -49,6 +49,7 @@ function weatherToText(code: number): string {
 export default function MontrealStatus() {
   const [time, setTime] = useState("");
   const [weather, setWeather] = useState("");
+  const [snowDepth, setSnowDepth] = useState<number | null>(null);
   const [timeOfDay, setTimeOfDay] = useState("");
   const [ready, setReady] = useState(false);
 
@@ -62,12 +63,15 @@ export default function MontrealStatus() {
     }, 60000);
 
     fetch(
-      "https://api.open-meteo.com/v1/forecast?latitude=45.5017&longitude=-73.5673&current_weather=true&timezone=America/Montreal"
+      "https://api.open-meteo.com/v1/forecast?latitude=45.5017&longitude=-73.5673&current=weather_code,snow_depth&timezone=America/Montreal"
     )
       .then((res) => res.json())
       .then((data) => {
-        if (data.current_weather) {
-          setWeather(weatherToText(data.current_weather.weathercode));
+        if (data.current) {
+          setWeather(weatherToText(data.current.weather_code));
+          if (data.current.snow_depth != null) {
+            setSnowDepth(data.current.snow_depth);
+          }
         }
       })
       .catch(() => {});
@@ -80,7 +84,7 @@ export default function MontrealStatus() {
 
   return (
     <p className="montreal-status">
-      It&apos;s {time} over here in Montreal, currently {weather || timeOfDay}{weather && ` and ${timeOfDay}`}.
+      It&apos;s {time} over here in Montreal, currently {weather || timeOfDay}{weather && ` and ${timeOfDay}`}.{snowDepth != null && ` Right now there is ${Math.round(snowDepth)} cm of snow on the ground.`}
     </p>
   );
 }
