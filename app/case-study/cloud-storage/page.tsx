@@ -57,9 +57,9 @@ export default function CloudStorageCaseStudy() {
               what the MVP should include. My role was to take this initial input
               and turn it into a clear, actionable product direction.
             </p>
-            <div className="case-image">
+            <div className="case-image" style={{ maxWidth: "70%", margin: "0 auto" }}>
               <Image
-                src="/images/case-studies/cloud-storage/pm-scope.png"
+                src="/images/case-studies/cloud-storage/pm-scope-v2.png"
                 alt="Scope details provided by the Product Manager, outlining the What, Why, and Goals for connecting DCCs to cloud services"
                 width={1600}
                 height={900}

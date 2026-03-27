@@ -90,7 +90,7 @@ export default function FloatingIcons() {
       </div>
       <div
         className="floating-icon icon-5"
-        data-tooltip="next trip: Barcelona in March 2026"
+        data-tooltip="next trip: Newfoundland in May 2026"
       >
         <Image
           src="/images/plane1.png"
