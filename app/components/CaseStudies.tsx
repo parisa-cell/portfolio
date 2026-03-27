@@ -5,30 +5,30 @@ import Link from "next/link";
 
 const caseStudies = [
   {
-    id: "content-browser",
-    title: "Generic Content Browser for Autodesk M&E Products",
-    slug: "/case-study/content-browser",
-    cta: "Got a few minutes? Watch above, or",
-  },
-  {
     id: "cloud-storage",
     title: "Cloud Personal Storage for Autodesk Maya and 3dsMax",
     slug: "/case-study/cloud-storage",
-    cta: "Prefer reading? Skip the video and",
+    cta: "Want to dive deeper into the process?",
     video: "/videos/cloud-storage.mp4",
+  },
+  {
+    id: "content-browser",
+    title: "Generic Content Browser for Autodesk M&E Products",
+    slug: "/case-study/content-browser",
+    cta: "Want to see how it all came together?",
   },
   {
     id: "asset-versioning",
     title: "Asset Versioning for Unity Asset Manager",
     slug: "/case-study/asset-versioning",
-    cta: "Curious how it all came together?",
+    cta: "Curious about the design process?",
     video: "/videos/asset-versioning.mp4",
   },
   {
     id: "3d-annotation",
     title: "3D Annotation for Unity Reflect",
     slug: "/case-study/3d-annotation",
-    cta: "Want the full picture? ☕ Watch above, or",
+    cta: "Interested in the full story?",
   },
 ];
 
@@ -89,7 +89,9 @@ export default function CaseStudies() {
             <h3 className="magazine-item-number">
               {String(i + 1).padStart(2, "0")}
             </h3>
-            <h3 className="magazine-item-title">{title}</h3>
+            <h3 className="magazine-item-title">
+              <Link href={slug}>{title}</Link>
+            </h3>
             {video ? (
               <div className="magazine-video">
                 <video
