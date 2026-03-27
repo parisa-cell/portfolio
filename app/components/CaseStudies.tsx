@@ -30,6 +30,7 @@ const caseStudies = [
     title: "3D Annotation for Unity Reflect",
     slug: "/case-study/3d-annotation",
     cta: "Interested in the full story?",
+    image: "/images/case-studies/3d-annotation/annotation-main.png",
   },
 ];
 
