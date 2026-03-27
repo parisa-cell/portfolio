@@ -84,7 +84,7 @@ export default function MontrealStatus() {
 
   return (
     <p className="montreal-status">
-      It&apos;s {time} over here in Montreal, currently {weather || timeOfDay}{weather && ` and ${timeOfDay}`}.{snowDepth != null && ` Right now there is ${Math.round(snowDepth)} cm of snow on the ground.`}
+      It&apos;s {time} over here in Montreal, currently {weather || timeOfDay}.{snowDepth != null && ` Right now there is ${Math.round(snowDepth)} cm of snow on the ground.`}
     </p>
   );
 }

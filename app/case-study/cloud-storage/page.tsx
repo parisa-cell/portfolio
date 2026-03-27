@@ -65,6 +65,10 @@ export default function CloudStorageCaseStudy() {
                 height={900}
               />
             </div>
+            <p className="case-image-caption">
+              This is the project brief provided by the PM&mdash;the starting
+              point I had to work with to define and shape the product direction.
+            </p>
           </section>
 
           <section>
@@ -105,7 +109,7 @@ export default function CloudStorageCaseStudy() {
             </p>
             <div className="case-image">
               <Image
-                src="/images/case-studies/cloud-storage/persona.png"
+                src="/images/case-studies/cloud-storage/persona-v2.png"
                 alt="User personas showing VSB and EDU artists (Freelancer/Generalist and Student) and SMB artists (Asset Builder, Animator, FX Artist)"
                 width={1600}
                 height={900}
@@ -133,27 +137,7 @@ export default function CloudStorageCaseStudy() {
           </section>
 
           <section>
-            <h3>List of Requirements</h3>
-            <p>
-              I translated this user value into a set of concrete requirements
-              that defined the MVP scope. These were iterated closely with the
-              PM, PO, and engineering team to ensure alignment across product,
-              design, and technical feasibility. This step helped turn an
-              abstract idea into a shared understanding of what we were building
-              and why.
-            </p>
-            <div className="case-image">
-              <Image
-                src="/images/case-studies/cloud-storage/requirements.png"
-                alt="Requirements for Maya MVP of Flow end-to-end experience, listing user stories for cloud project creation, scene management, and dependency handling"
-                width={1600}
-                height={900}
-              />
-            </div>
-          </section>
-
-          <section>
-            <h3>My Impact</h3>
+            <h3>My Impact during Problem Framing</h3>
             <p>
               Helped align PM, PO, and engineering on a clear user-centered
               scope and an achievable MVP.
@@ -284,7 +268,41 @@ export default function CloudStorageCaseStudy() {
           </section>
 
           <section>
-            <h3>My Impact</h3>
+            <h3>List of Requirements</h3>
+            <p>
+              Following the research and validation phase, I translated the
+              insights into a set of product requirements that defined the MVP
+              scope. I iterated on them with the PM, PO, and engineering team
+              to align on feasibility and scope, turning the validated direction
+              into a clear and actionable plan for development. This step helped
+              turn an abstract idea into a shared understanding of what we were
+              building and why.
+            </p>
+            <p>Here is the list of requirements:</p>
+            <ul>
+              <li>User is able to create a project in cloud personal storage and have all the standard folders and hierarchy created in cloud</li>
+              <li>User is able to set the project to a cloud project</li>
+              <li>User is able to receive proper feedback that a set project is on cloud</li>
+              <li>User is able to create a new scene in the set cloud project</li>
+              <li>User is able to save as the new scene in the set cloud project&apos;s &ldquo;Scenes&rdquo; folder</li>
+              <li>User has access to Maya save options when saving to set cloud project</li>
+              <li>User is able to open a scene from the set cloud project</li>
+              <li>User has access to Maya open options when opening from a set cloud project</li>
+              <li>User is able to incrementally save a scene to the set cloud project</li>
+              <li>User is able to see the status of opening/saving a scene through Flow desktop service</li>
+            </ul>
+            <ul>
+              <li>User is able to <strong>import</strong> a file from &ldquo;Scenes&rdquo; folder of the set cloud project</li>
+              <li>User is able to <strong>reference</strong> a file from &ldquo;Scenes&rdquo; folder of the set cloud project</li>
+              <li>User is able to <strong>add texture to</strong> objects from &ldquo;SourceImages&rdquo; folder of the set cloud project</li>
+              <li>If user <strong>imports</strong> a model from outside of set cloud project, any possible dependencies are fixed upon saving the scene</li>
+              <li>If user <strong>references</strong> a model from outside of set cloud project, any possible dependencies are fixed upon saving the scene</li>
+              <li>If user <strong>adds texture</strong> from outside of set cloud project, any possible dependencies are fixed upon saving the scene</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>My Impact during Research and Discovery</h3>
             <p>
               Identified file dependency risks and uncovered that Maya projects,
               not individual files, should be the unit of cloud storage.
@@ -378,12 +396,33 @@ export default function CloudStorageCaseStudy() {
           </section>
 
           <section>
-            <h3>My Impact</h3>
+            <h3>My Impact during Design</h3>
             <p>
               Established a project-based cloud workflow that preserved
               dependencies and provided a practical foundation for
               implementation.
             </p>
+          </section>
+
+          <section>
+            <h2>What I learned</h2>
+            <ul>
+              <li>
+                Defining the problem space early through persona, user value,
+                and requirements can significantly improve alignment and reduce
+                ambiguity across teams.
+              </li>
+              <li>
+                In complex systems, understanding technical constraints such as
+                file dependencies is critical to making the right design
+                decisions.
+              </li>
+              <li>
+                Iterating on user journeys before moving into UI design helps
+                explore solutions more efficiently and avoids costly rework
+                later.
+              </li>
+            </ul>
           </section>
         </div>
 
