@@ -332,7 +332,7 @@ export default function CloudStorageCaseStudy() {
             </p>
             <div className="case-image">
               <Image
-                src="/images/case-studies/cloud-storage/user-journey.png"
+                src="/images/case-studies/cloud-storage/user-journey-v2.png"
                 alt="User journey scenario for a generalist creating an advertisement video, detailing 24 steps from project creation to cloud sync and cross-device access"
                 width={1600}
                 height={900}
@@ -356,6 +356,19 @@ export default function CloudStorageCaseStudy() {
               These artifacts made it easier to align across product, design, and
               engineering before committing to final UI decisions.
             </p>
+            <div className="magazine-video">
+              <video
+                src="/videos/cloud-storage.mp4"
+                controls
+                playsInline
+                muted
+                preload="metadata"
+                style={{ width: "100%", borderRadius: "0.5rem" }}
+              />
+            </div>
+            <p className="case-image-caption">
+              Figma prototype of the user journey
+            </p>
           </section>
 
           <section>
@@ -375,6 +388,14 @@ export default function CloudStorageCaseStudy() {
               usable, but also realistic to implement within the system
               constraints.
             </p>
+            <div className="case-image">
+              <Image
+                src="/images/case-studies/cloud-storage/review-iterate.png"
+                alt="Maya dependency packaging dialog with review notes from team feedback sessions"
+                width={1600}
+                height={900}
+              />
+            </div>
           </section>
 
           <section>
