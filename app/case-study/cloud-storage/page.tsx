@@ -396,6 +396,10 @@ export default function CloudStorageCaseStudy() {
                 height={900}
               />
             </div>
+            <p className="case-image-caption">
+              Comments gathered from the broad design team on the
+              &ldquo;dependency packaging&rdquo; window after reviewing with them
+            </p>
           </section>
 
           <section>

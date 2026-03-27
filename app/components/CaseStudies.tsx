@@ -16,6 +16,7 @@ const caseStudies = [
     title: "Generic Content Browser for Autodesk M&E Products",
     slug: "/case-study/content-browser",
     cta: "Want to see how it all came together?",
+    image: "/images/case-studies/content-browser/gcb-main.png",
   },
   {
     id: "asset-versioning",
@@ -84,7 +85,7 @@ export default function CaseStudies() {
 
       {/* Content */}
       <div className="magazine-content">
-        {caseStudies.map(({ id, title, slug, cta, video }, i) => (
+        {caseStudies.map(({ id, title, slug, cta, video, image }, i) => (
           <div key={id} id={id} className="magazine-item">
             <h3 className="magazine-item-number">
               {String(i + 1).padStart(2, "0")}
@@ -100,6 +101,14 @@ export default function CaseStudies() {
                   playsInline
                   muted
                   preload="metadata"
+                  style={{ width: "100%", borderRadius: "0.5rem" }}
+                />
+              </div>
+            ) : image ? (
+              <div className="magazine-video">
+                <img
+                  src={image}
+                  alt={title}
                   style={{ width: "100%", borderRadius: "0.5rem" }}
                 />
               </div>
