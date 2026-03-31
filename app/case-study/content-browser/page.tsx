@@ -98,22 +98,126 @@ export default function ContentBrowserCaseStudy() {
           <section>
             <h2>Competitive Audit</h2>
             <p>
-              I also examined existing browsing experiences across industry tools
-              to understand common workflows&mdash;e.g., navigation, metadata
-              preview, handling large asset libraries. After extracting these
-              essential workflows, I fragmented them into their building blocks
-              (tree views, grid/list switching, filtering, preview paradigms,
-              drag-and-drop) to identify which interaction models consistently
-              supported efficient asset discovery.
+              I also examined existing browsing experiences across industry
+              tools&mdash;including Unreal Engine&apos;s Content Browser,
+              Unity&apos;s Project Window, Blender&apos;s Asset Browser, Cinema
+              4D&apos;s Asset Browser, Houdini&apos;s Gallery, and Substance
+              3D&apos;s Shelf&mdash;to understand common workflows around
+              navigation, metadata preview, and handling large asset libraries.
             </p>
+            <p>
+              After extracting these essential workflows, I fragmented them into
+              their building blocks (tree views, grid/list switching, filtering,
+              preview paradigms, drag-and-drop) to identify which interaction
+              models consistently supported efficient asset discovery.
+            </p>
+
+            <table className="audit-table">
+              <thead>
+                <tr>
+                  <th>Pattern</th>
+                  <th>Blender</th>
+                  <th>Houdini</th>
+                  <th>Cinema 4D</th>
+                  <th>Substance 3D</th>
+                  <th>Unreal</th>
+                  <th>Unity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Dual-pane layout (tree + content)</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>Grid/List view toggle</td>
+                  <td>&ndash;</td>
+                  <td>&ndash;</td>
+                  <td>✓</td>
+                  <td>&ndash;</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>Adjustable thumbnail size</td>
+                  <td>&ndash;</td>
+                  <td>&ndash;</td>
+                  <td>✓</td>
+                  <td>&ndash;</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>Text search + type filtering</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>Preview / detail panel</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>Drag and drop into scene</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>Breadcrumb navigation</td>
+                  <td>&ndash;</td>
+                  <td>&ndash;</td>
+                  <td>✓</td>
+                  <td>&ndash;</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>Favorites / collections</td>
+                  <td>&ndash;</td>
+                  <td>&ndash;</td>
+                  <td>✓</td>
+                  <td>&ndash;</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>Metadata (name, type, tags)</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+              </tbody>
+            </table>
+
             <p>
               This exploration helped us recognize gaps in current approaches,
               validate user expectations, and define a clear set of reusable
               patterns that could form the foundation of a unified, extensible
-              content browser. These insights shaped our early design direction,
-              ensuring the Generic Content Browser wasn&apos;t just a merged set
-              of features, but a thoughtfully structured system built on proven
-              patterns adapted for EMS users&apos; needs.
+              content browser. Key takeaways: the dual-pane layout with drag-and-drop
+              is universal and non-negotiable; grid/list toggle with adjustable
+              thumbnail sizes is expected by power users; and breadcrumb navigation
+              with favorites/collections significantly improves asset discovery in
+              large libraries.
             </p>
           </section>
 
@@ -331,11 +435,11 @@ export default function ContentBrowserCaseStudy() {
         </div>
 
         <div className="case-nav">
-          <Link href="/#work" className="case-nav-link">
-            &larr; All work
-          </Link>
           <Link href="/case-study/cloud-storage" className="case-nav-link">
-            Next: Cloud Personal Storage &rarr;
+            &larr; Previous: Cloud Personal Storage
+          </Link>
+          <Link href="/case-study/asset-versioning" className="case-nav-link">
+            Next: Asset Versioning &rarr;
           </Link>
         </div>
       </article>

@@ -459,8 +459,8 @@ export default function AssetVersioningCaseStudy() {
         </div>
 
         <div className="case-nav">
-          <Link href="/case-study/cloud-storage" className="case-nav-link">
-            &larr; Previous: Cloud Personal Storage
+          <Link href="/case-study/content-browser" className="case-nav-link">
+            &larr; Previous: Content Browser
           </Link>
           <Link href="/case-study/3d-annotation" className="case-nav-link">
             Next: 3D Annotation &rarr;

@@ -983,6 +983,41 @@ ul {
   background: var(--green-mid);
 }
 
+/* Audit Table */
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.audit-table th,
+.audit-table td {
+  padding: 0.6rem 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid var(--green-light);
+}
+
+.audit-table th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: var(--green-light);
+}
+
+.audit-table td:first-child,
+.audit-table th:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.audit-table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
 /* Case Navigation */
 .case-nav {
   display: flex;

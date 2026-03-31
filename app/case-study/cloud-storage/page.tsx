@@ -452,11 +452,11 @@ export default function CloudStorageCaseStudy() {
         </div>
 
         <div className="case-nav">
-          <Link href="/case-study/content-browser" className="case-nav-link">
-            &larr; Previous: Content Browser
+          <Link href="/#work" className="case-nav-link">
+            &larr; All work
           </Link>
-          <Link href="/case-study/asset-versioning" className="case-nav-link">
-            Next: Asset Versioning &rarr;
+          <Link href="/case-study/content-browser" className="case-nav-link">
+            Next: Content Browser &rarr;
           </Link>
         </div>
       </article>
