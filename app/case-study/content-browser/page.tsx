@@ -332,6 +332,13 @@ export default function ContentBrowserCaseStudy() {
               the most valuable workflows early, while still leaving room to
               expand later.
             </p>
+            <div className="case-image">
+              <img
+                src="/images/case-studies/content-browser/story-mapping.png"
+                alt="Story mapping board showing activities, steps, MVP, Phase 2, Phase 3 and sprint breakdown"
+                style={{ width: "100%", borderRadius: "8px" }}
+              />
+            </div>
           </section>
 
           <section>
