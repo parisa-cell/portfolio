@@ -97,6 +97,13 @@ export default function ContentBrowserCaseStudy() {
 
           <section>
             <h2>Competitive Audit</h2>
+            <div className="case-image">
+              <img
+                src="/images/case-studies/content-browser/competitive-audit.png"
+                alt="Competitive audit of content browsers across Unreal, Blender, NVIDIA Omniverse, Substance 3D, and Cinema 4D showing navigation, search, preview, and interaction patterns"
+                style={{ width: "100%", borderRadius: "8px" }}
+              />
+            </div>
             <p>
               I also examined existing browsing experiences across industry
               tools&mdash;including Unreal Engine&apos;s Content Browser,
